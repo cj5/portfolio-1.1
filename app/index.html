@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>portfolio 2</title>
+    <title>Chris Stack</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -21,15 +21,53 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
   </head>
-  <body>
+  <body class="fade-in">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    <div class="container-fluid">
-        <h1>Chris Stack</h1>
+    <header class="container-fluid">
+    <div class="menu">
+    <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="index.html">about</a></li>
+        <li><a href="index.html">contact</a></li>
+    </ul>
+        
     </div>
+    <canvas></canvas>
+        <div class="container">
+            <div class="col-xs-6">
+                <h1>Chris Stack</h1>
+            </div>
+            <div class="col-xs-2 main-nav">
+                <div class="buttons-container">
+                    <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button x">
+                        <span class="lines"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="subtitle-wrapper fade-in slow">
+            <h2>Web Developer</h2>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <article class="row">
+            <div class="projects-images">
+                <a href="https://www.etsy.com/listing/258916132/square-coasters-cedar?ref=shop_home_active_1"><img src="images/endgrain.png" /></a>
+            </div>
+        </article>
+        <article class="row">
+            <div class="projects-images">
+                <a href="https://www.etsy.com/listing/258916132/square-coasters-cedar?ref=shop_home_active_1"><img src="images/endgrain.png" /></a>
+            </div>
+        </article>
+    </section>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -65,5 +103,100 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+
+    <script>
+            var canvas = document.querySelector("canvas");
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            var ctx = canvas.getContext("2d");
+
+            var TAU = 2 * Math.PI;
+
+            times = [];
+            function loop() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              update();
+              draw();
+              requestAnimationFrame(loop);
+            }
+
+            function Ball (startX, startY, startVelX, startVelY) {
+              this.x = startX || Math.random() * canvas.width;
+              this.y = startY || Math.random() * canvas.height;
+              this.vel = {
+                x: startVelX || Math.random() * 2 - 1,
+                y: startVelY || Math.random() * 2 - 1
+              };
+              this.update = function(canvas) {
+                if (this.x > canvas.width + 150 || this.x < -150) {
+                  this.vel.x = -this.vel.x;
+                }
+                if (this.y > canvas.height + 150 || this.y < -150) {
+                  this.vel.y = -this.vel.y;
+                }
+                this.x += this.vel.x;
+                this.y += this.vel.y;
+              };
+              this.draw = function(ctx, can) {
+                ctx.beginPath();
+                ctx.globalAlpha = .9;
+                ctx.fillStyle = '#ddd';
+                ctx.arc((.5 + this.x) | 0, (0.5 + this.y) | 0, 4, 0, TAU, false); 
+                ctx.fill();
+              }
+            }
+
+            var balls = [];
+            for (var i = 0; i < canvas.width * canvas.height / (65*65); i++) {
+              balls.push(new Ball(Math.random() * canvas.width, Math.random() * canvas.height));
+            }
+
+            var lastTime = Date.now();
+            function update() {
+              var diff = Date.now() - lastTime;
+              for (var frame = 0; frame * 30.6667 < diff; frame++) {
+                for (var index = 0; index < balls.length; index++) {
+                  balls[index].update(canvas);
+                }
+              }
+              lastTime = Date.now();
+            }
+            var mouseX = -1e9, mouseY = -1e9;
+            document.addEventListener('mousemove', function(event) {
+              mouseX = event.clientX;
+              mouseY = event.clientY;
+            });
+
+            function distMouse(ball) {
+              return Math.hypot(ball.x - mouseX, ball.y - mouseY);
+            }
+
+            function draw() {
+              ctx.globalAlpha=1;
+              ctx.fillStyle = '#EDEDEC';
+              ctx.fillRect(0,0,canvas.width, canvas.height);
+              for (var index = 0; index < balls.length; index++) {
+                var ball = balls[index];
+                ball.draw(ctx, canvas);
+                ctx.beginPath();
+                for (var index2 = balls.length - 1; index2 > index; index2 += -1) {
+                  var ball2 = balls[index2];
+                  var dist = Math.hypot(ball.x - ball2.x, ball.y - ball2.y);
+                    if (dist < 100) {
+                      ctx.strokeStyle = "#999";
+                      ctx.globalAlpha = 1 - (dist > 100 ? .8 : dist / 150);
+                      ctx.lineWidth = "4px";
+                      ctx.moveTo((0.5 + ball.x) | 0, (0.5 + ball.y) | 0);
+                      ctx.lineTo((0.5 + ball2.x) | 0, (0.5 + ball2.y) | 0);
+                    }
+                }
+                ctx.stroke();
+              }
+            }
+
+            // Start
+            loop(); 
+        </script>
+
   </body>
 </html>

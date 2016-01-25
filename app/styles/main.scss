@@ -4,7 +4,14 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import "_base.scss";
+@import "variables/_typography.scss";
+@import "variables/_sizing.scss";
+@import "variables/_transitions.scss";
+@import "variables/_hovers.scss";
+
+@import "mixins/_line.scss";
+
+@import "_home.scss";
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
