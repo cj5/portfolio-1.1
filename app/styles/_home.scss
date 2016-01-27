@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-    color: #242324;
+    color: $main;
     font-size: 8px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-    color: #242324;
+    color: $main;
     font-size: 27px;    
     position: relative;
     letter-spacing: 3px;
@@ -59,7 +59,7 @@ img {
 .menu.open {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.95);
     position: fixed;
     top: 0;
     left: 0;
@@ -215,7 +215,7 @@ ul {
     height: 100%;
     width: 100%;
     margin-right: 0;
-    background-color: #EDEDEC;
+    background-color: $header;
     opacity: .9;
 }
 
@@ -225,7 +225,7 @@ ul {
 }
 
 .footer-wrapper {
-    background-color: #363636;
+    background-color: $footer;
     height: 320px;
     margin-top: 20px;
     display: inline;
@@ -241,28 +241,10 @@ ul {
         }
 }
 
-.main-nav {
-    text-transform: uppercase;
-    font-size: 8px;
+.navicon {
     float: right;
     top: 4px;
-    right: -10px;
-        ul {
-            float: left;
-            text-align: right;
-            margin-top: 20px; 
-        }
-            li {
-                text-decoration: none;
-                list-style-type: none;
-                // display: inline;
-            }
-                a {
-                    padding: 5px;                    
-                    color: #242324;
-                    letter-spacing: 3px;
-                }
-    
+    right: -10px;    
 }
 
 .subtitle-wrapper {
@@ -273,7 +255,7 @@ ul {
 .projects-images {
     // position: relative;
     text-align: center;
-    margin: 5px 0;}
+    margin: 10px 0;}
 
 .footer-font {
     font-size: 25px;
@@ -293,6 +275,20 @@ ul {
 /* Landscape */
 @media only screen 
     and (min-device-width: 320px) 
+    and (max-device-width: 600px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+        img { 
+            width: 60%;
+        }
+        .container-fluid .menu {
+            padding: 0%;
+        }   
+    } 
+
+/* Landscape */
+@media only screen 
+    and (min-device-width: 601px) 
     and (max-device-width: 750px)
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: landscape) {
@@ -300,9 +296,9 @@ ul {
             width: 60%;
         }
         .container-fluid .menu {
-            padding: 3% 0;
+            padding: 5% 0;
         }   
-    }            
+    }               
         
 
 
