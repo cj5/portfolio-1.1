@@ -17,16 +17,18 @@
 //     animation-delay:.4s;
 // }
 
+
 body {
     font-family: $raleway;
 }
 
 h1 {
     color: $main;
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin: 20px 0;
+    font-weight: 600;
     a {
         color: $main;
     }
@@ -326,6 +328,7 @@ ul {
     margin-bottom: 70px;
     li {
         list-style-type: none;
+        padding-left: 7px;
         a {
             color: $main;
         }
@@ -334,7 +337,9 @@ ul {
 
 .h3-wrapper {
     h3 {
-        font-size: 19px;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 2px;
     }
 }
 
@@ -358,6 +363,7 @@ ul {
     color: #999999;
     text-transform: uppercase;
     font-size: 12px;
+    letter-spacing: 1px;
 }
 
 .contact-info {
