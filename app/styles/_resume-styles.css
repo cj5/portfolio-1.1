@@ -202,5 +202,11 @@ ul.skills-list {
 	padding-left: 35px;
 }
 
+article.col-xs-6 {
+    padding-left: 7px;
+}
 
+article.col-xs-6.pad-left {
+    padding-left: 35px;
+}
 
