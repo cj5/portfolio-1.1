@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Chris Stack</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -37,25 +38,25 @@
 
         <header class="header-wrapper">
             <div class="menu">
-            <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="contact.html">contact</a></li>
-            </ul>        
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>       
             </div>
             <canvas></canvas>
             <div class="container">
                 <div class="col-xs-6">
                     <h1><a href="index.html">Chris Stack</a></h1>
                 </div>
-                <div class="nav-menu col-sm-6 container">
-                <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="about.html">about</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                </ul>
+                <div class="nav-menu col-xs-6">
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
                 </div>
-                <div class="col-xs-6 navicon">
+                <div class="col-xs-2 navicon">
                     <div class="buttons-container">
                         <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button x">
                             <span class="lines"></span>
@@ -63,7 +64,7 @@
                     </div>
                 </div>
                 <div class="subtitle-wrapper fade-in slow">
-                <h2>Web Developer</h2>
+                    <h2>Web Developer</h2>
                 </div>
             </div>           
         </header>
@@ -73,17 +74,17 @@
         <section class="container projects-wrapper">
             <div class="col-md-4">
                 <div class="projects-images">
-                    <a href="https://www.etsy.com/listing/258916132/square-coasters-cedar?ref=shop_home_active_1"><img src="images/endgrain.png" /></a>
+                    <a href="index.html"><img src="images/endgrain.png" /></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="projects-images">
-                    <a href="https://www.etsy.com/listing/258916132/square-coasters-cedar?ref=shop_home_active_1"><img src="images/chris.png" /></a>
+                    <a href="gulch/index.html"><img src="images/gulch.png" /></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="projects-images">
-                    <a href="https://www.etsy.com/listing/258916132/square-coasters-cedar?ref=shop_home_active_1"><img src="images/rapid-traverse-2.png" /></a>
+                    <a href="index.html"><img src="images/rapid-traverse-2.png" /></a>
                 </div>
             </div>
         </section>
@@ -92,8 +93,8 @@
 
         <footer class="footer-wrapper">    
                 <ul>
-                    <li><a class=" gray footer-font" href="index.html">Home</a></li>
-                    <li><a class=" gray footer-font" href="about.html">About</a></li>
+                    <li><a class="gray footer-font" href="index.html">Home</a></li>
+                    <li><a class="gray footer-font" href="about.html">About</a></li>
                     <li><a class="gray footer-font" href="contact.html">Contact</a></li>
                 </ul>
         </footer>
@@ -171,8 +172,8 @@
               this.draw = function(ctx, can) {
                 ctx.beginPath();
                 ctx.globalAlpha = .9;
-                ctx.fillStyle = '#ddd';
-                ctx.arc((.5 + this.x) | 0, (0.5 + this.y) | 0, 2, 0, TAU, false); 
+                ctx.fillStyle = 'black';
+                ctx.arc((.5 + this.x) | 0, (0.5 + this.y) | 0, 1, 0, TAU, false); 
                 ctx.fill();
               }
             }

@@ -71,12 +71,12 @@
     <!-- ABOUT -->
 
         <section class="container about-wrapper">
-            <div class="container">
+            <div class="col-sm-8 col-xs-12">
                 <h3>Who I am</h3>
                 <p>I'm a junior front end web developer currrently working on freelance projects and developing my portfolio.</p>
             </div>    
-            <div class="resume-button">  
-                <button class="button"><span><a href="index-resume.html">View Resume </a></span></button>           
+            <div class="col-sm-4 resume-button">  
+                <a href="index-resume.html" class="btn btn-default">View Resume</a>         
             </div>
         </section>
 
@@ -163,8 +163,8 @@
               this.draw = function(ctx, can) {
                 ctx.beginPath();
                 ctx.globalAlpha = .9;
-                ctx.fillStyle = '#ddd';
-                ctx.arc((.5 + this.x) | 0, (0.5 + this.y) | 0, 2, 0, TAU, false); 
+                ctx.fillStyle = 'black';
+                ctx.arc((.5 + this.x) | 0, (0.5 + this.y) | 0, 1, 0, TAU, false); 
                 ctx.fill();
               }
             }
