@@ -128,7 +128,7 @@ img {
     user-select: none;
     border-radius: $button-size/7;
     float: right;
-    margin: 0px;
+    margin: 0px 4px;
     width: 45px;
     height: 45px;
     color: black;
@@ -510,7 +510,7 @@ ul {
         font-size: 30px;
     }
     h1 {
-        font-size: 9px;
+        font-size: 11px;
         font-weight: 700;
         a {
             transition: all 0.2s ease-in-out;
@@ -633,7 +633,7 @@ a.gray:hover {
         }
         a {           
             color: $main;
-            font-size: 9px;
+            font-size: 11px;
             font-weight: 700;
             letter-spacing: 2px;
             transition: all 0.2s ease-in-out;    
@@ -641,7 +641,10 @@ a.gray:hover {
         a:hover {
             color: $gray;
         }
-        
+    }
+    .nav-menu.col-sm-6 {
+        padding-right: 0;
+        padding-left: 0;
     }
     .resume-button {
         text-align: right;
@@ -718,4 +721,13 @@ a.gray:hover {
     .container.about-wrapper {
         padding: 0 200px;
     } 
+}
+
+@media screen and (min-width: 1500px) {
+    .header-wrapper {
+        height: 700px;
+    }
+    canvas {
+        height: 700px;
+    }
 }      

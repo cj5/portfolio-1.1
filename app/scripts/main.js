@@ -1,9 +1,7 @@
 $('.lines-button').click(function() {
-        $(this).toggleClass("close");
-        $('.menu').toggleClass("open");           
+    $(this).toggleClass("close");
+    $('.menu').toggleClass("open");           
 });
-
-    
 
 // $('.lines-button').click( function(){
 //     if ( $(this).hasClass('close open') ) {
@@ -15,3 +13,9 @@ $('.lines-button').click(function() {
 // });
 
 
+// function draw() {
+//   var ctx = (a canvas context);
+//   ctx.canvas.width  = window.innerWidth;
+//   ctx.canvas.height = window.innerHeight;
+//   //...drawing code...
+// }
