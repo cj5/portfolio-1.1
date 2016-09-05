@@ -1,8 +1,8 @@
 @mixin line {
     display: inline-block;
-    width: $button-size;
-    height: $button-size/7;
+    width: 25px;
+    height: 3px;
     background: black;
-    border-radius: $button-size/14; 
+    border-radius: 10px; 
     transition: $transition;
 }

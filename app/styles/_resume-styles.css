@@ -107,6 +107,7 @@ p {
 }
 
 img {
+    width: 20px;
     float: right;
     margin: 10px 10px 0 0;
     -webkit-transition: -webkit-transform .35s ease-in-out;

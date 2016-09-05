@@ -76,6 +76,8 @@ canvas:hover {
 
 img {
     width: 85%;
+    max-width: 100%;
+    padding: 20px 4px;
 }
 
 .nav-menu {
@@ -83,6 +85,7 @@ img {
 }
 
 .menu {
+    background: rgba(0, 0, 0, 0);
     display: none;
 }
 
@@ -95,6 +98,7 @@ img {
     left: 0;
     display: block;
     z-index: 900;
+    transition: 0.3s ease-in-out;
     ul {
         position: relative;
         top: 40%;
@@ -104,12 +108,11 @@ img {
 }
 
 .projects-images {
-    opacity: 1;
-    transition: all .2s ease-in-out;            
-}
-
-.projects-images:hover {
     opacity: .8;
+    transition: all .2s ease-in-out;  
+    &:hover {
+        opacity: 1;
+    }          
 }
 
 .col-xs-2 {
@@ -184,7 +187,7 @@ img {
     &:before, &:after{
         transform-origin: 50% 50%;
         top:0;
-        width: $button-size;
+        width: 25px;
         background: white;
     }
 
@@ -290,7 +293,7 @@ ul {
 
 .projects-images {
     text-align: center;
-    margin: 10px 0;
+    // margin: 10px 0;
 }    
 
 // FOOTER STYLES -------------------
@@ -342,7 +345,8 @@ ul {
 // BUTTON ---------------------------
 
 .btn {
-    border-radius: 4px;
+    border: solid 1px $main;
+    border-radius: 30px;
     background-color: #EDEDEC;
     border: none;
     color: #242324;
@@ -352,15 +356,21 @@ ul {
     width: 170px;
     cursor: pointer;
     margin: 5px;
+    margin-top: 40px;
     transition: all 0.2s ease-in-out;
         a {
             color: $main;
         }
 }
 
+.btn-default {
+    border: solid 1px $main;
+}
+
 .btn-default:hover {
     color: $main;
     background-color: $light-gray;
+    border-color: $main;
 }
 
 // span .btn-default {
@@ -551,7 +561,7 @@ ul {
         margin: 60px 0;
     }
     .container.projects-wrapper {
-        margin: 60px 0 120px 0;
+        margin: 60px 0;
     }
     .container.about-wrapper {
         margin: 100px 0;
@@ -610,7 +620,7 @@ a.gray:hover {
 }
 .contact-list:link {
     text-decoration: none;
-    color: #242324;
+    // color: #242324;
 }
     .navicon {
         display: none;
@@ -670,9 +680,14 @@ a.gray:hover {
     }
     img {
         width: 100%;
+        padding: 4px 4px;
+        float: left;
     }
     .col-md-4 {
-        padding: 0 3px; //DIST BTWN PROJ IMGS
+        padding: 0; //DIST BTWN PROJ IMGS
+        img {
+            height: auto;
+        }
     }
     .container.about-wrapper {
         padding: 0 100px;
